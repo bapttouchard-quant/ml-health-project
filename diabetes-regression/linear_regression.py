@@ -20,6 +20,8 @@ predictions = model.predict(X_test)
 
 mae = mean_absolute_error(y_test, predictions)
 
+#print(predictions, mae)
+
 #scores = cross_val_score(LinearRegression(), X, y, cv=5, scoring="neg_mean_absolute_error")
 scores = cross_val_score(Ridge(alpha=0.1), X, y, cv=5, scoring="neg_mean_absolute_error")
 mae_folds = -scores
